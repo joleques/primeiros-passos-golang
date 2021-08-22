@@ -1,0 +1,8 @@
+## gerar imagem golang 
+docker build -t golang_local .
+
+## criar ambiente para desenvolver em golang
+docker run -d -it -p 8080:8080 --rm --name ambiente_desenv_go -v "$PWD"/go/src:/usr/local/go/src golang_local
+
+##Entrar no container
+docker exec -it ambiente_desenv_go bash

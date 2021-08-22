@@ -1,0 +1,5 @@
+docker build -t golang_local .
+
+docker run -d -it -p 8080:8080 --rm --name ambiente_desenv_go -v "$PWD"/go:/go golang_local
+
+docker exec -it ambiente_desenv_go bash
